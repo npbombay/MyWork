@@ -9,11 +9,20 @@ export class HeroService{
 		return Promise.resolve(HEROES);
 	}
 	
+	
+	getHero(id: number) : Promise<Hero> {
+		console.log("first here");
+		return this.getHeroes().then(heroes => heroes.find(hero => hero.id === id));
+	
+	}
+	
 	getHeroesSlowley(): Promise<Hero[]> {
 	
 		return new Promise(resolve => {
 			setTimeout(() => resolve(this.getHeroes()),2000);
-		}
-	);
+			}
+		);
 	}
+	
+	
 }

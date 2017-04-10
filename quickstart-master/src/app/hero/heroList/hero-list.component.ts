@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { Hero } from './../hero';
 import { HeroService } from './../hero-service';
 import { OnInit} from '@angular/core'; 
@@ -25,6 +26,6 @@ export class HeroListComponent  implements OnInit {
 	}
 	
 	getHeroes(): void {
-		this.heroService.getHeroesSlowley().then(myHeroes=> this.heroes = myHeroes);
+		this.heroService.getHeroes().then(myHeroes=> this.heroes = myHeroes);
 	}
 }
